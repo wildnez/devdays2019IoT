@@ -3,19 +3,19 @@ package com.hazelcast.demo.iot.data;
 import java.io.Serializable;
 
 public class Location implements Serializable {
-    private long longitude;
-    private long lattitude;
+    private double longitude;
+    private double latitude;
 
-    Location(long longitude, long lattitude) {
+    Location(double longitude, double latitude) {
         this.longitude = longitude;
-        this.lattitude = lattitude;
+        this.latitude = latitude;
     }
 
-    public long getLattitude() {
-        return lattitude;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 }
