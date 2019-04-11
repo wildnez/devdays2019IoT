@@ -43,7 +43,7 @@ public final class EarthTools
      */
     public static double distanceBetween(Location p1, Location p2)
     {
-        return distanceBetween(p1.getLongitude( ), p1.getLatitude( ),
+        return distanceBetween(p1.getLongitude(), p1.getLatitude( ),
                 p2.getLongitude( ), p2.getLatitude( ));
     }
 
