@@ -1,4 +1,4 @@
-package com.hazelcast.demo.iot.data;
+package com.hazelcast.demo.iot.dto;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -26,4 +26,10 @@ public class TaxiData implements Serializable {
     public Location getLocation() {
         return location;
     }
+
+    @Override
+    public String toString() {
+        return ID + " < > " + timestamp + " < > " + location;
+    }
 }
+
