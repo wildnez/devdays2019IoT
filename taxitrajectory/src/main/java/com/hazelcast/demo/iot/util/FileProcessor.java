@@ -15,6 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
@@ -38,6 +39,11 @@ public class FileProcessor {
                     File file = new File(FileProcessor.class.getClassLoader().getResource(prefix + ".txt").getFile());
                     Stream lineStream = Files.lines(file.toPath());
                     lineStream.forEach(line -> {
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         String[] tokenized = pattern.split(line.toString());
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
                         Timestamp timestamp = null;
